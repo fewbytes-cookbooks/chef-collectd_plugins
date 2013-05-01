@@ -14,7 +14,7 @@ if !carbon.nil? and !carbon.empty?
   end
 
   collectd_python_plugin "carbon_writer" do
-    options 'LineReceiverHost' => ((carbon['ec2'] and carbon['ec2']['public_ipv4']) or carbon['hostname']),
+    options 'LineReceiverHost' => ((carbon['cloud'] and carbon['cloud']['local_ipv4']) or carbon['ipaddress']),
       'LineReceiverPort' => carbon['graphite']['carbon']['line_receiver_port'],
       'TypesDB' => node['collectd']['types_db'],
       'DifferentiateCounters' => true, 'DifferentiateCountersOverTime' => true,
