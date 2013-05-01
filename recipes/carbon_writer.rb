@@ -18,6 +18,6 @@ if !carbon.nil? and !carbon.empty?
       'LineReceiverPort' => carbon['graphite']['carbon']['line_receiver_port'],
       'TypesDB' => node['collectd']['types_db'],
       'DifferentiateCounters' => true, 'DifferentiateCountersOverTime' => true,
-      'MetricPrefix' => "collectd.#{node['inneractive']['server_role'] || "generic"}"
+      'MetricPrefix' => "collectd.generic"
   end
 end
