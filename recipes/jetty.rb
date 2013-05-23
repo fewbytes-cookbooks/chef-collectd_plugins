@@ -49,6 +49,16 @@ collectd_java_plugin "GenericJMX" do
           "Table" => true,
           "Attribute" => "Usage"
         }
+      },
+      {:_name => "thread_count",
+        "ObjectName" => "java.lang:type=Threading,*",
+        "InstancePrefix" => "thread_count-",
+        "InstanceFrom" => "name",
+        "Value" => {
+          "Type" => "count",
+          "Table" => true,
+          "Attribute" => "ThreadCount"
+        }
       }
     ],
     "Connection" => {
