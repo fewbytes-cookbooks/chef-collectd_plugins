@@ -1,8 +1,6 @@
 #
 # Cookbook Name:: collectd_plugins
-# Recipe:: default
-#
-# Copyright 2010, Atari, Inc
+# Recipe:: cpu
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,13 +17,4 @@
 
 include_recipe "collectd"
 
-# Include standard plugins
-include_recipe "collectd_plugins::syslog"
-include_recipe "collectd_plugins::rrdtool"
-include_recipe "collectd_plugins::cpu"
-include_recipe "collectd_plugins::load"
-include_recipe "collectd_plugins::df"
-include_recipe "collectd_plugins::disk"
-include_recipe "collectd_plugins::interface"
-include_recipe "collectd_plugins::memory"
-include_recipe "collectd_plugins::swap"
+collectd_plugin "load"
